@@ -1,36 +1,38 @@
-# ROADMAP P10–P14
+# ROADMAP P10-P14
 
-Produk: TugasKu. Satu sprint = satu minggu, satu tema, satu hasil yang bisa didemokan.
+Satu minggu satu sprint. Setiap sprint harus ada hasil yang bisa ditunjukkan.
 
-## P10 — Debug dan Git
+## P10 - debug dan git
 
-- Perbaiki bug hasil uji Sprint 1 (daftar bug di `docs/BUGS.md`, satu bug = satu commit `fix:`).
-- Tambah penanganan data rusak di `localStorage` (JSON tidak valid, field hilang).
-- Disiplin Git: commit kecil dengan pesan `feat:`/`fix:`/`docs:`, branch per fitur, riwayat bersih.
-- **Selesai bila:** nol error Console pada alur utama; `git log` menunjukkan minimal 5 commit bermakna.
+- Perbaiki bug dari uji Sprint 1, catat di `docs/BUGS.md`, satu bug satu commit `fix:`.
+- Tambah penanganan kalau data localStorage rusak atau kosong.
+- Rapikan kebiasaan git: commit kecil, pesan jelas, branch untuk fitur baru.
+- Selesai kalau: Console bersih di alur utama, minimal 5 commit bermakna.
 
-## P11 — ES Modules
+## P11 - ES modules
 
-- Pecah `src/js/app.js` menjadi modul: `store.js` (localStorage), `render.js` (daftar), `stats.js`, `views.js`.
-- `index.html` memakai satu `<script type="module" src="src/js/main.js">`.
-- `src/ui/ui-pustaka.js` dijadikan modul yang mengekspor API, bukan variabel global.
-- **Selesai bila:** tidak ada variabel global selain modul; aplikasi berjalan dari `file://` maupun server statis.
+- Pecah `src/js/app.js` jadi `store.js`, `render.js`, `stats.js`, `views.js`.
+- `index.html` cukup memuat satu `<script type="module">`.
+- `ui-pustaka.js` diubah jadi modul yang mengekspor fungsi, tidak lagi variabel global.
+- Selesai kalau: tidak ada variabel global, halaman jalan dari `file://` dan dari server.
 
-## P12 — Komponen, penyimpanan aman, perawatan
+## P12 - komponen, penyimpanan aman, perawatan
 
-- Komponen daftar tugas dipisah (kartu tugas, toolbar filter) dan dipakai ulang di semua view.
-- Penyimpanan aman: validasi skema saat membaca, cadangan otomatis, tombol ekspor/impor JSON, peringatan saat kuota penuh.
-- Perawatan: `DEPENDENCIES.md` diperbarui, komentar usang dibuang, CSS dirapikan per bagian.
-- **Selesai bila:** impor JSON valid mengembalikan data; JSON rusak tidak membuat halaman blank.
+- Pisahkan kartu tugas dan toolbar filter jadi komponen yang bisa dipakai ulang.
+- Cek skema data saat membaca localStorage, tambah cadangan otomatis.
+- Tambah tombol ekspor dan impor JSON, beri pesan kalau kuota penuh.
+- Perbarui `DEPENDENCIES.md`, buang komentar dan CSS yang sudah tidak dipakai.
+- Selesai kalau: impor JSON valid mengembalikan data, JSON rusak tidak bikin halaman blank.
 
-## P13 — Konsep produk (Tugas 7)
+## P13 - konsep produk (Tugas 7)
 
-- Dokumen konsep: visi produk, pengguna, alur utama, pembeda, dan rencana rilis.
-- Mockup halaman utama dan satu halaman fitur memakai komponen pustaka yang sudah ada.
-- **Selesai bila:** konsep 1 dokumen + 2 mockup, konsisten dengan charter.
+- Tulis konsep produk: visi, pengguna, alur utama, pembeda, rencana rilis.
+- Buat mockup halaman utama dan satu halaman fitur pakai komponen pustaka yang sudah ada.
+- Selesai kalau: satu dokumen konsep dan dua mockup, isinya tidak bertentangan dengan charter.
 
-## P14 — Demo akhir
+## P14 - demo akhir
 
-- Uji 3 pengguna terhadap alur MVP, catat waktu dan hambatan.
-- Perbaiki temuan kritis, lalu demo: alur tambah → selesai → statistik → hapus.
-- **Selesai bila:** demo berjalan tanpa error, laporan uji pengguna terlampir, repo bersih.
+- Uji 3 pengguna pada alur MVP, catat waktu dan bagian yang bikin bingung.
+- Perbaiki temuan yang kritis.
+- Demo: tambah tugas, tandai selesai, buka statistik, hapus tugas.
+- Selesai kalau: demo lancar, laporan uji pengguna dilampirkan, repo bersih.

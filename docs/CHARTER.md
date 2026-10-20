@@ -1,50 +1,48 @@
-# Project Charter — TugasKu (Sprint 1)
+# Project Charter
 
-**Produk:** TugasKu — pencatat tugas kuliah berbasis web.
-**Pemilik:** Iqgam Afrizal (5125500042) · D3 Multimedia Broadcasting, Praktikum Pemrograman Visual.
-**Ruang lingkup:** P09–P14 (5 sprint), demo akhir minggu 14.
+Nama produk: TugasKu, pencatat tugas kuliah berbasis web.
+Pemilik: Iqgam Afrizal (5125500042), D3 Multimedia Broadcasting.
+Dikerjakan P09 sampai P14, demo di minggu 14.
 
-## 1. Masalah
+## Masalah
 
-Mahasiswa mencatat deadline di chat kelas, catatan kertas, dan aplikasi pesan yang
-berbeda-beda. Akibatnya tugas terlewat, prioritas tertukar, dan tidak ada satu tempat
-untuk melihat progres. Aplikasi catatan yang ada terlalu berat atau butuh akun.
+Mahasiswa mencatat deadline di chat kelas, di kertas, dan di aplikasi pesan yang
+berbeda-beda. Tugas jadi terlewat dan tidak ada satu tempat untuk melihat progres.
+Aplikasi catatan yang ada terasa berat atau harus daftar akun dulu.
 
-## 2. Pengguna sasaran (persona)
+## Pengguna
 
-**Iqgam, 20 tahun, mahasiswa D3 semester 3.** Mengambil 12 mata kuliah, mengerjakan
-tugas di sela kelas dan saat pulang. Membuka aplikasi lewat ponsel, sering di koneksi
-lambat. Butuh mencatat tugas dalam hitungan detik, melihat apa yang mendesak, dan tahu
-sudah seberapa banyak yang selesai. Tidak mau daftar akun.
+Iqgam, 20 tahun, mahasiswa D3 semester 3. Ambil 12 mata kuliah. Sering membuka
+aplikasi dari ponsel di koneksi lambat. Butuh mencatat tugas dengan cepat,
+melihat mana yang mendesak, dan tahu sudah berapa yang selesai. Tidak mau daftar akun.
 
-## 3. Fitur MVP (MoSCoW)
+## Fitur MVP (MoSCoW)
 
 | Prioritas | Fitur |
-|-----------|-------|
-| **Must** | Tambah tugas dengan validasi (nama, matkul, deadline tidak lampau, prioritas); tandai selesai/batal; hapus dengan konfirmasi; data bertahan setelah reload (`localStorage`); cari + filter (semua/belum/selesai/prioritas tinggi); statistik persentase selesai |
-| **Should** | Kelola daftar mata kuliah sendiri; badge prioritas yang terbaca; notifikasi singkat setiap simpan/hapus; tampilan rapi di layar 400 px |
-| **Could** | Ekspor/impor JSON sebagai cadangan; mode gelap; pintasan keyboard |
-| **Won't (sprint ini)** | Login/akun, sinkronisasi antar perangkat, notifikasi push/email, backend/database, aplikasi mobile native |
+|---|---|
+| Must | Tambah tugas dengan validasi (nama, matkul, deadline tidak boleh lewat, prioritas); tandai selesai dan batal; hapus pakai konfirmasi; data tetap ada setelah reload; cari dan filter; statistik persentase selesai |
+| Should | Tambah dan hapus mata kuliah sendiri; badge prioritas; notifikasi singkat saat simpan atau hapus; rapi di layar 400 px |
+| Could | Ekspor dan impor JSON; mode gelap; pintasan keyboard |
+| Won't | Login, sinkron antar perangkat, notifikasi push, backend, aplikasi mobile |
 
-## 4. Kriteria sukses (terukur)
+## Ukuran berhasil
 
-1. Menambah satu tugas selesai ≤ 30 detik dan ≤ 6 interaksi, diukur 3 kali.
-2. Data 100% utuh setelah reload dan setelah browser ditutup (uji 10 tugas).
-3. Nol error di Console DevTools pada alur utama (tambah, selesai, hapus, cari, statistik).
+1. Satu tugas selesai ditambah dalam 30 detik atau kurang, maksimal 6 interaksi.
+2. Data utuh setelah reload dan setelah browser ditutup (uji 10 tugas).
+3. Tidak ada error di Console saat tambah, selesai, hapus, cari, dan buka statistik.
 4. Angka statistik sama dengan hitungan manual pada 3 skenario data.
-5. Tampilan tidak overflow horizontal pada lebar 400 px; semua tombol ≥ 40 px.
-6. Uji 3 pengguna: minimal 2 dari 3 menyelesaikan alur "tambah lalu tandai selesai" tanpa dibantu.
+5. Tidak ada scroll ke samping di lebar 400 px, semua tombol minimal 40 px.
+6. Dari 3 pengguna, minimal 2 bisa menambah tugas lalu menandainya selesai tanpa dibantu.
 
-## 5. Risiko
+## Risiko
 
-| Risiko | Dampak | Mitigasi |
-|--------|--------|----------|
-| `localStorage` terhapus saat clear data browser / mode privat | Data pengguna hilang | Ekspor JSON (P12) + peringatan di halaman Tentang |
-| CDN Bootstrap gagal dimuat saat demo offline | Modal dan toast mati, tombol tidak berfungsi | Sediakan salinan lokal di `assets/vendor/`, uji sebelum demo |
-| Konflik gaya Bootstrap dengan CSS sendiri | Layout rusak di layar kecil | Bootstrap dimuat lebih dulu, kelas sendiri diberi nama berbeda (`panel`, `baris`, `tata-letak`), uji 400 px tiap sprint |
-| Waktu sprint bentrok dengan tugas lain | Fitur Should/Could tidak selesai | Won't sudah ditetapkan; prioritas Must diselesaikan lebih dulu |
+| Risiko | Akibat | Cara menangani |
+|---|---|---|
+| localStorage terhapus saat clear data atau mode privat | Data pengguna hilang | Ekspor JSON di P12, beri peringatan di halaman Tentang |
+| CDN Bootstrap gagal dimuat saat demo offline | Modal dan toast tidak jalan | Simpan salinan di assets/vendor, cek sebelum demo |
+| Gaya Bootstrap bentrok dengan CSS sendiri | Layout rusak di layar kecil | Bootstrap dimuat dulu, kelas sendiri diberi nama berbeda, cek 400 px tiap sprint |
+| Waktu bentrok dengan tugas lain | Fitur Should dan Could tidak selesai | Fitur Won't sudah dibuang, Must dikerjakan dulu |
 
-## 6. Batasan
+## Batasan
 
-Web statis tanpa backend, satu halaman, satu pengguna per browser. Fokus kualitas
-antarmuka dan proses pengembangan bertahap, bukan fitur kolaborasi.
+Web statis, tanpa backend, satu halaman, satu pengguna per browser.
