@@ -22,6 +22,7 @@ nyangkut di browser yang dipakai. Pindah browser, datanya nggak ikut.
 - [Charter](docs/CHARTER.md): rencana proyek satu halaman, isinya masalah, fitur
   MoSCoW, dan risiko
 - [Roadmap](docs/ROADMAP.md): rencana sprint P10 sampai P14
+- [BUGS.md](docs/BUGS.md): catatan bug hasil uji sprint
 - [DEPENDENCIES.md](DEPENDENCIES.md): pustaka yang saya pakai dan alasannya
 
 ## Isi folder
