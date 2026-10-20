@@ -4,7 +4,7 @@ Aplikasi buat mencatat tugas kuliah. Proyek akhir Praktikum Pemrograman Visual
 saya, Iqgam Afrizal (5125500042), D3 Multimedia Broadcasting.
 
 Baru selesai sprint 1. Isinya masih kode Tugas 4 yang saya pindah ke folder
-`src/`.
+`src/` terus saya tambahin Bootstrap.
 
 ## Cara buka
 
@@ -32,6 +32,13 @@ nyangkut di browser yang dipakai. Pindah browser, datanya nggak ikut.
 - `src/ui/ui-pustaka.js` cuma file ini yang manggil Bootstrap
 - `assets/` gambar dan font
 - `docs/` charter, roadmap, catatan bug, dan screenshot
+
+## Bootstrap
+
+Saya pakai Bootstrap 5.3.3 dari CDN. Versinya saya tulis lengkap (bukan
+`@latest`) biar pas demo nanti tampilannya nggak mendadak beda. Yang kepakai
+baru modal buat konfirmasi hapus, toast, badge prioritas, sama spinner. Alasan
+lengkap dan cara naik versinya saya catat di `DEPENDENCIES.md`.
 
 ## Bantuan AI
 
