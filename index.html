@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aplikasi Pencatat Tugas Kuliah</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
@@ -25,8 +26,8 @@
   <main class="wrap">
     <!-- View 1: Daftar (dari Tugas 3) -->
     <section id="view-daftar" class="view aktif" aria-labelledby="j-daftar">
-      <div class="grid">
-        <div class="card">
+      <div class="tata-letak">
+        <div class="panel">
           <h2 id="j-daftar">Tambah Tugas</h2>
           <form id="taskForm" novalidate>
             <label>Nama tugas <span id="charCount" class="count">0/60</span>
@@ -37,7 +38,7 @@
               <select id="course"></select>
               <small class="err" id="errCourse"></small>
             </label>
-            <div class="row">
+            <div class="baris">
               <label>Deadline
                 <input type="date" id="deadline">
                 <small class="err" id="errDeadline"></small>
@@ -65,7 +66,7 @@
           </details>
         </div>
 
-        <div class="card">
+        <div class="panel">
           <h2>Daftar Tugas</h2>
           <div class="toolbar">
             <input type="search" id="search" placeholder="Cari berdasarkan nama tugas atau mata kuliah…">
@@ -77,7 +78,7 @@
             </select>
           </div>
           <div id="loading" class="loading" hidden>
-            <span class="spinner" aria-hidden="true"></span> Menyimpan…
+            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span> Menyimpan…
           </div>
           <div id="empty" class="empty">
             <img src="assets/images/hero.svg" alt="Ilustrasi mahasiswa mengelola daftar tugas" width="240" height="200" id="imgHero">
@@ -94,7 +95,7 @@
 
     <!-- View 2: Statistik -->
     <section id="view-statistik" class="view" aria-labelledby="j-stat" hidden>
-      <div class="card">
+      <div class="panel">
         <h2 id="j-stat">Statistik</h2>
         <p class="stat-angka">Selesai: <strong><span id="pct">0</span>%</strong> (<span id="doneCount">0</span>/<span id="totalCount">0</span> tugas)</p>
         <div class="progres" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progres tugas selesai">
@@ -106,7 +107,7 @@
 
     <!-- View 3: Mata kuliah -->
     <section id="view-matkul" class="view" aria-labelledby="j-matkul" hidden>
-      <div class="card">
+      <div class="panel">
         <h2 id="j-matkul">Mata Kuliah</h2>
         <ul id="matkulList" class="list"></ul>
         <form id="matkulForm" novalidate>
@@ -121,14 +122,14 @@
 
     <!-- View 4: Tentang -->
     <section id="view-tentang" class="view" aria-labelledby="j-tentang" hidden>
-      <div class="card tentang">
+      <div class="panel tentang">
         <img src="assets/images/ikon-tugas.svg" alt="Ikon tas kuliah" width="96" height="96" id="imgIkon">
         <div>
           <h2 id="j-tentang">Tentang Aplikasi</h2>
           <p>Aplikasi yang membantu mahasiswa mengelola tugas kuliah secara praktis dan terorganisir. Pengguna dapat mencatat tugas, menandai tugas yang telah selesai, serta memantau progres pengerjaan melalui fitur Statistik.</p>
         </div>
       </div>
-      <div class="card">
+      <div class="panel">
         <h2>Cara pakai</h2>
         <ul class="fitur">
           <li>Masukkan informasi tugas pada formulir Daftar Tugas, lalu tekan Simpan Tugas.</li>
@@ -139,6 +140,25 @@
     </section>
   </main>
 
+  <div class="modal fade" id="modalKonfirmasi" tabindex="-1" aria-labelledby="judulKonfirmasi" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="judulKonfirmasi">Konfirmasi</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body" id="isiKonfirmasi"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-danger" id="tombolSetuju">Hapus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="areaToast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="src/ui/ui-pustaka.js"></script>
   <script src="src/js/app.js"></script>
 </body>
 </html>

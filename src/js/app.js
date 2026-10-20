@@ -118,19 +118,27 @@ function buatLi(t, animasi) {
   const kanan = document.createElement('div');
   kanan.style.display = 'flex'; kanan.style.gap = '6px'; kanan.style.alignItems = 'center';
   const tag = document.createElement('span');
-  tag.className = `tag ${t.prio}`; tag.textContent = t.prio;
+  tag.className = `badge tag ${t.prio}`; tag.textContent = t.prio;
   const bT = document.createElement('button');
   bT.className = 'mini'; bT.textContent = t.done ? 'Batal' : 'Selesai';
   bT.addEventListener('click', () => { t.done = !t.done; save(); render(); updateStatCepat(); });
   const bH = document.createElement('button');
   bH.className = 'mini'; bH.textContent = 'Hapus';
-  bH.addEventListener('click', async () => {
-    if (!kurangiGerak()) {
-      const a = li.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: 'ease-in' });
-      try { await a.finished; } catch { /* abaikan */ }
-    }
-    tasks = tasks.filter((x) => x.id !== t.id);
-    save(); render(); updateStatCepat();
+  bH.addEventListener('click', () => {
+    UI.konfirmasi({
+      judul: 'Hapus tugas?',
+      pesan: `"${t.nama}" akan dihapus dari daftar.`,
+      labelAksi: 'Hapus',
+      onSetuju: async () => {
+        if (!kurangiGerak()) {
+          const a = li.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: 'ease-in' });
+          try { await a.finished; } catch { /* abaikan */ }
+        }
+        tasks = tasks.filter((x) => x.id !== t.id);
+        save(); render(); updateStatCepat();
+        UI.beriPesan('Tugas dihapus.');
+      },
+    });
   });
   kanan.append(tag, bT, bH);
   li.append(kiri, kanan);
@@ -175,6 +183,7 @@ form.addEventListener('submit', (e) => {
     $('charCount').textContent = '0/60';
     render();
     updateStatCepat();
+    UI.beriPesan('Tugas disimpan.');
     nameI.focus();
   }, kurangiGerak() ? 50 : 400);
 });
