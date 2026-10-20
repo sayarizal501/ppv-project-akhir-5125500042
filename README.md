@@ -1,43 +1,62 @@
 # TugasKu
 
-Aplikasi buat mencatat tugas kuliah. Proyek akhir Praktikum Pemrograman Visual,
-Iqgam Afrizal (5125500042).
+Aplikasi buat mencatat tugas kuliah. Ini proyek akhir Praktikum Pemrograman
+Visual saya, Iqgam Afrizal (5125500042), D3 Multimedia Broadcasting.
 
-Sekarang baru sprint 1. Isinya kode Tugas 4 yang saya pindahkan ke folder `src/`
-dan saya kasih Bootstrap.
+Baru selesai sprint 1. Isinya masih kode Tugas 4 yang saya pindah ke folder
+`src/` terus saya tambahin Bootstrap.
 
 ## Cara buka
 
-Klik `index.html` dua kali. Kalau mau lewat server:
+Klik `index.html` dua kali udah jalan. Mau pakai server juga boleh:
 
 ```
 python -m http.server 8000
 ```
 
-Tugas dan daftar matkul disimpan di localStorage browser, jadi datanya cuma ada
-di browser yang dipakai.
+Data tugas dan daftar matkul disimpan di localStorage browser, jadi datanya
+nyangkut di browser yang dipakai. Pindah browser, datanya nggak ikut.
+
+## Dokumen
+
+- [Charter](docs/CHARTER.md) — rencana proyek satu halaman: masalah, fitur
+  MoSCoW, risiko
+- [Roadmap](docs/ROADMAP.md) — rencana sprint P10 sampai P14
+- [BUGS.md](docs/BUGS.md) — catatan bug hasil uji sprint
+- [DEPENDENCIES.md](DEPENDENCIES.md) — pustaka yang saya pakai dan alasannya
 
 ## Isi folder
 
-- `index.html` halaman utama, menunya ada Daftar, Statistik, Matkul, dan Tentang
-- `src/css/style.css` tampilan halaman
-- `src/js/app.js` logika aplikasi
-- `src/ui/ui-pustaka.js` cuma file ini yang manggil Bootstrap
-- `assets/` gambar dan font
-- `docs/` charter, roadmap, catatan bug, screenshot
+- `index.html` — halaman utama, menunya Daftar, Statistik, Matkul, dan Tentang
+- `src/css/style.css` — tampilan halaman
+- `src/js/app.js` — logika aplikasinya
+- `src/ui/ui-pustaka.js` — cuma file ini yang manggil Bootstrap
+- `assets/` — gambar dan font
+- `docs/` — charter, roadmap, catatan bug, dan screenshot
 
 ## Bootstrap
 
-Saya pakai Bootstrap 5.3.3 dari CDN. Versinya saya tulis lengkap biar tampilan
-tidak berubah tiba-tiba. Yang dipakai baru modal buat konfirmasi hapus, toast,
-badge prioritas, dan spinner. Cara pasang dan cara naik versi saya catat di
-`DEPENDENCIES.md`.
+Saya pakai Bootstrap 5.3.3 dari CDN. Versinya saya tulis lengkap (bukan
+`@latest`) biar pas demo nanti tampilannya nggak mendadak beda. Yang kepakai
+baru modal buat konfirmasi hapus, toast, badge prioritas, sama spinner. Alasan
+lengkap dan cara naik versinya saya catat di `DEPENDENCIES.md`.
 
 ## Bantuan AI
 
-Bagian mindahin file ke `src/`, pasang Bootstrap, bikin `ui-pustaka.js`, dan nulis
-dokumen di `docs/` saya kerjakan dibantu AI. Kode Tugas 4 saya tulis sendiri.
-Semua hasilnya sudah saya buka dan coba di browser.
+Kode Tugas 4 saya tulis sendiri. Yang saya dibantu AI: mindahin file ke `src/`,
+pasang Bootstrap, bikin `ui-pustaka.js`, dan ngerapin dokumen-dokumen di
+`docs/`. Semua hasilnya tetap saya buka dan coba sendiri di browser sampai
+bener-bener jalan.
+
+Prompt yang saya pakai (intinya, dibahas per chat sama AI):
+
+- "Saya punya kode Tugas 4 di satu folder, tolong pindahkan ke struktur
+  src/css, src/js, src/ui tanpa mengubah perilakunya."
+- "Pasang Bootstrap 5.3.3 lewat CDN, inget urutan: style.css harus dimuat
+  sesudah bootstrap."
+- "Bikin src/ui/ui-pustaka.js isinya konfirmasi hapus (modal) dan pesan
+  singkat (toast), app.js jangan manggil bootstrap langsung."
+- "Rapikan README ini dong, bahasanya jangan kaku-kaku banget."
 
 ## Selanjutnya
 
