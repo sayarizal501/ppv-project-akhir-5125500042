@@ -36,6 +36,8 @@ const form = $('taskForm'), nameI = $('taskName'), courseI = $('course'),
 
 let tasks = [];
 try { tasks = JSON.parse(localStorage.getItem('tugas') || '[]'); } catch { tasks = []; }
+if (!Array.isArray(tasks)) tasks = [];
+tasks = tasks.filter((t) => t && typeof t.nama === 'string' && typeof t.id === 'number');
 let idSeq = tasks.reduce((m, t) => Math.max(m, t.id || 0), 0) + 1;
 const save = () => localStorage.setItem('tugas', JSON.stringify(tasks));
 const MK_AWAL = ['PRAKTIKUM ANIMASI 2D', 'ANIMASI 2D', 'SISTEM PEMANCAR', 'PRAKTIKUM SISTEM PEMANCAR', 'WORKSHOP UI/UX', 'PEMROGRAMAN VISUAL', 'JURNALISTIK', 'PRAKTIKUM PEMROGRAMAN VISUAL', 'JARINGAN KOMPUTER', 'PRAKTIKUM JARINGAN KOMPUTER', 'TEKNIK PENYIARAN', 'PRODUKSI KONTEN DIGITAL'];
