@@ -1,62 +1,61 @@
 # TugasKu
 
-Aplikasi buat mencatat tugas kuliah. Proyek akhir Praktikum Pemrograman Visual
-saya, Iqgam Afrizal (5125500042), D3 Multimedia Broadcasting.
+Aplikasi pencatat tugas kuliah berbasis web. Proyek akhir Praktikum Pemrograman
+Visual, Iqgam Afrizal (5125500042), D3 Multimedia Broadcasting.
 
-Baru selesai sprint 1. Isinya masih kode Tugas 4 yang saya pindah ke folder
-`src/` terus saya tambahin Bootstrap.
+Sprint 1 dan Sprint 2 (P10) sudah selesai. Isi aplikasi berasal dari kode
+Tugas 4 yang dipindahkan ke folder `src/` dan ditambahkan Bootstrap.
 
-## Cara buka
+## Cara membuka
 
-Klik `index.html` dua kali udah jalan. Mau pakai server juga boleh:
+Buka berkas `index.html` di browser (Chrome atau Edge).
 
-```
-python -m http.server 8000
-```
-
-Data tugas dan daftar matkul disimpan di localStorage browser, jadi datanya
-nyangkut di browser yang dipakai. Pindah browser, datanya nggak ikut.
+Data tugas dan daftar mata kuliah disimpan di localStorage browser, sehingga
+data hanya tersimpan pada browser yang dipakai. Bila browser berganti, data
+tidak ikut berpindah.
 
 ## Dokumen
 
-- [Charter](docs/CHARTER.md): rencana proyek satu halaman, isinya masalah, fitur
+- [Charter](docs/CHARTER.md): rencana proyek satu halaman berisi masalah, fitur
   MoSCoW, dan risiko
 - [Roadmap](docs/ROADMAP.md): rencana sprint P10 sampai P14
 - [BUGS.md](docs/BUGS.md): catatan bug hasil uji sprint
-- [DEPENDENCIES.md](DEPENDENCIES.md): pustaka yang saya pakai dan alasannya
+- [DEBUG_LOG.md](docs/DEBUG_LOG.md): proses dua bug Sprint 2 dan perbaikannya
+- [DEPENDENCIES.md](DEPENDENCIES.md): pustaka yang dipakai dan alasannya
+- [manifest.json](assets/manifest.json): daftar aset beserta jenis, ukuran, dan
+  lisensinya
 
 ## Isi folder
 
-- `index.html` halaman utama, menunya Daftar, Statistik, Matkul, dan Tentang
-- `src/css/style.css` tampilan halaman
-- `src/js/app.js` logika aplikasinya
-- `src/ui/ui-pustaka.js` cuma file ini yang manggil Bootstrap
-- `assets/` gambar dan font
-- `docs/` charter, roadmap, catatan bug, dan screenshot
+- `index.html`: halaman utama dengan menu Daftar, Statistik, Matkul, dan Tentang
+- `src/css/style.css`: tampilan halaman
+- `src/js/app.js`: logika aplikasi
+- `src/ui/ui-pustaka.js`: satu-satunya berkas yang memanggil Bootstrap
+- `assets/`: gambar, font, dan manifest aset
+- `docs/`: charter, roadmap, catatan bug, dan tangkapan layar
 
 ## Bootstrap
 
-Saya pakai Bootstrap 5.3.3 dari CDN. Versinya saya tulis lengkap (bukan
-`@latest`) biar pas demo nanti tampilannya nggak mendadak beda. Yang kepakai
-baru modal buat konfirmasi hapus, toast, badge prioritas, sama spinner. Alasan
-lengkap dan cara naik versinya saya catat di `DEPENDENCIES.md`.
+Bootstrap 5.3.3 dipasang dari CDN dengan versi lengkap, bukan `@latest`, agar
+tampilan tidak berubah saat demo. Bagian yang dipakai baru modal konfirmasi
+hapus, toast, badge prioritas, dan spinner. Alasan lengkap serta cara menaikkan
+versi tercatat di `DEPENDENCIES.md`.
 
 ## Bantuan AI
 
-Kode Tugas 4 saya tulis sendiri. Yang saya dibantu AI: mindahin file ke `src/`,
-pasang Bootstrap, bikin `ui-pustaka.js`, dan ngerapin dokumen-dokumen di
-`docs/`. Semua hasilnya tetap saya buka dan coba sendiri di browser sampai
-bener-bener jalan.
+Kode Tugas 4 ditulis sendiri. Bantuan AI dipakai untuk memindahkan berkas ke
+`src/`, memasang Bootstrap, membuat `ui-pustaka.js`, dan merapikan dokumen di
+`docs/`. Semua hasilnya tetap dibuka dan diuji di browser sampai berjalan.
 
-Prompt yang saya pakai (intinya, dibahas per chat sama AI):
+Inti permintaan yang dipakai:
 
-- "Saya punya kode Tugas 4 di satu folder, tolong pindahkan ke struktur
-  src/css, src/js, src/ui tanpa mengubah perilakunya."
-- "Pasang Bootstrap 5.3.3 lewat CDN, inget urutan: style.css harus dimuat
+- "Kode Tugas 4 ada di satu folder, pindahkan ke struktur src/css, src/js, dan
+  src/ui tanpa mengubah perilakunya."
+- "Pasang Bootstrap 5.3.3 lewat CDN. Perhatikan urutan: style.css harus dimuat
   sesudah bootstrap."
-- "Bikin src/ui/ui-pustaka.js isinya konfirmasi hapus (modal) dan pesan
-  singkat (toast), app.js jangan manggil bootstrap langsung."
-- "Rapikan README ini dong, bahasanya jangan kaku-kaku banget."
+- "Buat src/ui/ui-pustaka.js berisi konfirmasi hapus (modal) dan pesan singkat
+  (toast). app.js tidak boleh memanggil bootstrap langsung."
+- "Rapikan README ini, bahasanya jangan terlalu kaku."
 
 ## Selanjutnya
 
