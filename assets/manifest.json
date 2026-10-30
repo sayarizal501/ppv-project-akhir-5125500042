@@ -1,0 +1,39 @@
+{
+  "aset": [
+    {
+      "berkas": "assets/fonts/inter-latin-400.woff2",
+      "jenis": "font/woff2",
+      "ukuran_kb": 47.1,
+      "sumber": "Inter (Rasmus Andersson), diambil dari repositori rsms/inter",
+      "lisensi": "SIL Open Font License 1.1"
+    },
+    {
+      "berkas": "assets/fonts/inter-latin-600.woff2",
+      "jenis": "font/woff2",
+      "ukuran_kb": 23.9,
+      "sumber": "Inter (Rasmus Andersson), diambil dari repositori rsms/inter",
+      "lisensi": "SIL Open Font License 1.1"
+    },
+    {
+      "berkas": "assets/fonts/inter-latin-700.woff2",
+      "jenis": "font/woff2",
+      "ukuran_kb": 23.8,
+      "sumber": "Inter (Rasmus Andersson), diambil dari repositori rsms/inter",
+      "lisensi": "SIL Open Font License 1.1"
+    },
+    {
+      "berkas": "assets/images/hero.svg",
+      "jenis": "image/svg+xml",
+      "ukuran_kb": 2.7,
+      "sumber": "dibuat sendiri",
+      "lisensi": "karya sendiri"
+    },
+    {
+      "berkas": "assets/images/ikon-tugas.svg",
+      "jenis": "image/svg+xml",
+      "ukuran_kb": 0.4,
+      "sumber": "dibuat sendiri",
+      "lisensi": "karya sendiri"
+    }
+  ]
+}
