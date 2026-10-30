@@ -1,8 +1,10 @@
 # DEBUG_LOG Proyek Akhir (TugasKu) - Sprint 2
 
 Dua bug nyata diperbaiki pada cabang terpisah, lalu masing-masing di-merge ke
-`main`. Alat yang dipakai: tab Network untuk masalah aset dan tab Console untuk
-kesalahan JavaScript.
+`main`. Setiap bug dicatat dengan urutan yang sama: gejala, dugaan awal
+(hipotesis), bukti dari DevTools, penyebab, perbaikan, lalu uji ulang. Alat yang
+dipakai adalah tab Network untuk masalah aset dan tab Console untuk kesalahan
+JavaScript.
 
 ## BUG-01: Font Inter gagal dimuat (404)
 
@@ -15,8 +17,8 @@ GET /src/assets/fonts/inter-latin-600.woff2   404
 GET /src/assets/fonts/inter-latin-700.woff2   404
 ```
 
-Dugaan awal adalah berkas fontnya tidak ada. Dugaan tersebut gugur karena folder
-`assets/fonts/` berisi ketiga berkas itu (47,1 KB, 23,9 KB, dan 23,8 KB).
+Hipotesis awal adalah berkas fontnya tidak ada. Hipotesis tersebut gugur karena
+folder `assets/fonts/` berisi ketiga berkas itu (47,1 KB, 23,9 KB, dan 23,8 KB).
 
 Penyebabnya ada pada `src/css/style.css` baris 1 sampai 3, yaitu
 `url("../assets/fonts/...")`. Karena berkas CSS berada di `src/css/`, alamat
@@ -38,8 +40,9 @@ pernah tampil dan tombol simpan tidak bereaksi. Console menampilkan:
 Uncaught TypeError: tasks.reduce is not a function
 ```
 
-Dugaan awal adalah `JSON.parse` gagal membaca data. Dugaan tersebut gugur karena
-blok `try/catch` pada `src/js/app.js:38` sudah menangani JSON yang tidak valid.
+Hipotesis awal adalah `JSON.parse` gagal membaca data. Hipotesis tersebut gugur
+karena blok `try/catch` pada `src/js/app.js:38` sudah menangani JSON yang tidak
+valid.
 
 Penyebabnya, pemeriksaan tersebut hanya menangkap kesalahan sintaks. Nilai `{}`
 lolos dari `JSON.parse` lalu langsung dipakai pada baris berikutnya
