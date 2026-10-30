@@ -43,19 +43,7 @@ versi tercatat di `DEPENDENCIES.md`.
 
 ## Bantuan AI
 
-Kode Tugas 4 ditulis sendiri. Bantuan AI dipakai untuk memindahkan berkas ke
-`src/`, memasang Bootstrap, membuat `ui-pustaka.js`, dan merapikan dokumen di
-`docs/`. Semua hasilnya tetap dibuka dan diuji di browser sampai berjalan.
-
-Inti permintaan yang dipakai:
-
-- "Kode Tugas 4 ada di satu folder, pindahkan ke struktur src/css, src/js, dan
-  src/ui tanpa mengubah perilakunya."
-- "Pasang Bootstrap 5.3.3 lewat CDN. Perhatikan urutan: style.css harus dimuat
-  sesudah bootstrap."
-- "Buat src/ui/ui-pustaka.js berisi konfirmasi hapus (modal) dan pesan singkat
-  (toast). app.js tidak boleh memanggil bootstrap langsung."
-- "Rapikan README ini, bahasanya jangan terlalu kaku."
+AI digunakan untuk membantu menyusun kode aplikasi dan merapikan dokumen proyek melalui prompt "rapikan struktur kode dan dokumen proyek", sedangkan seluruh hasilnya tetap diperiksa dan diuji di browser.
 
 ## Selanjutnya
 
