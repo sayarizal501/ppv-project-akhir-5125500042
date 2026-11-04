@@ -3,12 +3,21 @@
 Aplikasi pencatat tugas kuliah berbasis web. Proyek akhir Praktikum Pemrograman
 Visual, Iqgam Afrizal (5125500042), D3 Multimedia Broadcasting.
 
-Sprint 1 dan Sprint 2 (P10) sudah selesai. Isi aplikasi berasal dari kode
-Tugas 4 yang dipindahkan ke folder `src/` dan ditambahkan Bootstrap.
+Sprint 1 sampai Sprint 3 (P11) sudah selesai. Isi aplikasi berasal dari kode
+Tugas 4 yang dipindahkan ke folder `src/` dan ditambahkan Bootstrap. Sejak
+Sprint 3 kode dipecah menjadi ES Modules dengan `src/js/main.js` sebagai titik
+masuk.
 
 ## Cara membuka
 
-Buka berkas `index.html` di browser (Chrome atau Edge).
+Jalankan server lokal dari folder proyek, lalu buka alamatnya di browser:
+
+```bash
+python -m http.server 5500
+```
+
+Buka <http://127.0.0.1:5500/>. Sejak memakai ES Modules, `index.html` tidak
+bisa dibuka langsung dengan klik dua kali (`file://`).
 
 Data tugas dan daftar mata kuliah disimpan di localStorage browser, sehingga
 data hanya tersimpan pada browser yang dipakai. Bila browser berganti, data
@@ -29,8 +38,13 @@ tidak ikut berpindah.
 
 - `index.html`: halaman utama dengan menu Daftar, Statistik, Matkul, dan Tentang
 - `src/css/style.css`: tampilan halaman
-- `src/js/app.js`: logika aplikasi
-- `src/ui/ui-pustaka.js`: satu-satunya berkas yang memanggil Bootstrap
+- `src/js/main.js`: titik masuk, validasi formulir, dan pemasangan event
+- `src/js/state.js`: data tugas dan mata kuliah beserta aturannya
+- `src/js/storage.js`: satu-satunya modul yang menyentuh `localStorage`
+- `src/js/ui.js`: render daftar tugas, statistik, dan mata kuliah
+- `src/js/views.js`: perpindahan antar empat tampilan
+- `src/ui/ui-pustaka.js`: satu-satunya modul yang memanggil Bootstrap
+- `MODULE_MAP.md`: peta modul dan tanggung jawab tiap modul
 - `assets/`: gambar, font, dan manifest aset
 - `docs/`: charter, roadmap, catatan bug, dan tangkapan layar
 
@@ -43,7 +57,11 @@ versi tercatat di `DEPENDENCIES.md`.
 
 ## Bantuan AI
 
-AI digunakan untuk membantu menyusun kode aplikasi dan merapikan dokumen proyek, sedangkan seluruh hasilnya tetap diperiksa dan diuji di browser.
+AI (OpenCode, model DeepSeek V4.1 Flash) digunakan untuk membantu memecah
+`src/js/app.js` menjadi modul ES pada Sprint 3, menyusun `MODULE_MAP.md`, dan
+merapikan dokumen proyek. Seluruh hasilnya diperiksa dan diuji ulang di browser:
+alur MVP, Console, dan tampilan 400 px. Kode lama disimpan di riwayat Git, bukan
+disalin dari proyek lain.
 
 ## Selanjutnya
 
