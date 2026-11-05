@@ -57,7 +57,7 @@ versi tercatat di `DEPENDENCIES.md`.
 
 ## Bantuan AI
 
-AI (OpenCode) digunakan untuk membantu menyusun kode, lalu hasilnya diperiksa dan diuji ulang di browser.
+AI digunakan untuk membantu menyusun kode, lalu hasilnya diperiksa dan diuji ulang di browser.
 
 ## Selanjutnya
 
