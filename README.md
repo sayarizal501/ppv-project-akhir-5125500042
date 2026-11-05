@@ -57,21 +57,7 @@ versi tercatat di `DEPENDENCIES.md`.
 
 ## Bantuan AI
 
-Bagian ini menandai kode dari sumber lain sesuai catatan integritas Tugas P11.
-
-- **Alat:** OpenCode (asisten koding), model DeepSeek V4.1 Flash.
-- **Prompt yang dipakai:** teks tugas P11 butir 5-6 dari ETHOL beserta kode
-  `src/js/app.js` hasil Sprint 2, dengan permintaan: "Pecah kode proyek menjadi
-  minimal 3 modul ES di `src/`, satu arah tanpa dependensi melingkar, tanpa
-  variabel global aplikasi dan tanpa `onclick`, kerjakan di cabang
-  `refactor/modul` dengan satu commit `refactor:` per langkah, merge ke `main`,
-  lalu jalankan alur MVP sebelum dan sesudah refactor. Perbarui `MODULE_MAP.md`
-  dan `ROADMAP.md`."
-- **Yang dihasilkan AI:** modul `storage.js`, `state.js`, `ui.js`, `views.js`,
-  `main.js` yang dipecah dari `app.js`, serta draf `MODULE_MAP.md`.
-- **Pemeriksaan manusia:** kode dibaca ulang, alur MVP dijalankan ulang setelah
-  merge, Console diperiksa (0 error, 0 warning), dan tampilan 400 px dicek.
-  Kode lama tetap ada di riwayat Git, bukan disalin dari proyek lain.
+AI (OpenCode) digunakan untuk membantu menyusun kode, lalu hasilnya diperiksa dan diuji ulang di browser.
 
 ## Selanjutnya
 
