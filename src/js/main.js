@@ -4,6 +4,7 @@ import {
   renderDaftar, renderPilihanMatkul, renderMatkul, perbaruiStatistik, getar, kurangiGerak,
 } from './ui.js';
 import { pindahView } from './views.js';
+import { peringatanPenyimpanan } from './storage.js';
 import { beriPesan } from '../ui/ui-pustaka.js';
 
 const $ = (id) => document.getElementById(id);
@@ -63,7 +64,7 @@ form.addEventListener('submit', (e) => {
     $('charCount').textContent = '0/60';
     renderDaftar(id);
     perbaruiStatistik();
-    beriPesan('Tugas disimpan.');
+    beriPesan(peringatanPenyimpanan() || 'Tugas disimpan.');
     nameI.focus();
   }, kurangiGerak() ? 50 : 400);
 });

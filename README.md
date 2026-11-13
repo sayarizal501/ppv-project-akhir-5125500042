@@ -120,8 +120,7 @@ BarisTugas(tugas, { onSelesai, onHapus, onFokus, animasi }) -> HTMLElement
 - Font Inter (SIL Open Font License 1.1) di `assets/fonts/`.
 - `assets/images/hero.svg` dan `assets/images/ikon-tugas.svg`: gambar vektor
   buatan sendiri untuk proyek ini.
-- Asisten AI: kode Sprint 4 disusun dengan bantuan OpenCode (model DeepSeek
-  V4.1). Prompt utama: "Terapkan komponen reusable `BarisTugas` dan penyimpanan
-  aman berkunci versi pada proyek TugasKu, lalu uji dua skenario data rusak."
-  Hasilnya diperiksa dan diuji ulang di browser; keputusan akhir ada pada
-  penulis.
+- AI: kode Sprint 4 saya kerjakan dengan bantuan OpenCode (model DeepSeek
+  V4.1). Perintah yang saya pakai: "Terapkan komponen reusable `BarisTugas` dan
+  penyimpanan aman berkunci versi pada proyek TugasKu, lalu uji dua skenario
+  data rusak." Kodenya saya baca ulang dan uji di browser.

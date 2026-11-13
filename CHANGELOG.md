@@ -1,4 +1,4 @@
-# Changelog — TugasKu
+# Changelog TugasKu
 
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/id/1.1.0/),
 versi mengikuti [Semantic Versioning](https://semver.org/lang/id/).
@@ -28,6 +28,8 @@ versi mengikuti [Semantic Versioning](https://semver.org/lang/id/).
   tidak lagi membuat halaman kosong atau berhenti.
 - Penyimpanan penuh atau diblokir tidak lagi melempar galat; pengguna diberi
   pesan bahwa perubahan hanya ada di memori.
+- Toast setelah menyimpan tidak lagi berbunyi "Tugas disimpan." ketika
+  penyimpanan gagal; pesannya mengikuti `peringatanPenyimpanan()`.
 - Nama tugas berisi `<b>tebal</b>` tampil sebagai teks, bukan HTML.
 - Data lama di kunci `tugas` dan `matkul` dimigrasikan sekali jalan ke kunci
   berversi lalu kunci lama dihapus.
