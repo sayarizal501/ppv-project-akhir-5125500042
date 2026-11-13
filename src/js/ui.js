@@ -4,10 +4,13 @@ import {
   hapusMatkul, persenSelesai, jumlahSelesai,
 } from './state.js';
 import { konfirmasi, beriPesan } from '../ui/ui-pustaka.js';
+import { BarisTugas } from '../ui/komponen.js';
+import { peringatanPenyimpanan } from './storage.js';
 
 const $ = (id) => document.getElementById(id);
 const courseI = $('course'), list = $('taskList'), emptyEl = $('empty'),
-  noMatchEl = $('noMatch'), searchI = $('search'), filterI = $('filter'), preview = $('preview');
+  noMatchEl = $('noMatch'), searchI = $('search'), filterI = $('filter'), preview = $('preview'),
+  storageMsg = $('storageMsg');
 
 let idAnimasiBaru = null;
 let rafStat = null;
@@ -21,59 +24,41 @@ export function getar(el) {
     { duration: 300, easing: 'ease-out' });
 }
 
-function buatLi(t, animasi) {
-  const li = document.createElement('li');
-  if (t.done) li.classList.add('done');
-  if (t.prio === 'Tinggi') li.classList.add('tinggi');
-  const kiri = document.createElement('div');
-  const kuat = document.createElement('strong');
-  kuat.textContent = t.nama;
-  const meta = document.createElement('div');
-  meta.className = 'meta';
-  meta.textContent = `${t.mk} · ${t.deadline}`;
-  kiri.append(kuat, meta);
-  const kanan = document.createElement('div');
-  kanan.style.display = 'flex'; kanan.style.gap = '6px'; kanan.style.alignItems = 'center';
-  const tag = document.createElement('span');
-  tag.className = `badge tag ${t.prio}`; tag.textContent = t.prio;
-  const bT = document.createElement('button');
-  bT.className = 'mini'; bT.textContent = t.done ? 'Batal' : 'Selesai';
-  bT.addEventListener('click', () => { alihSelesai(t.id); renderDaftar(); perbaruiStatistik(); });
-  const bH = document.createElement('button');
-  bH.className = 'mini'; bH.textContent = 'Hapus';
-  bH.addEventListener('click', () => {
-    konfirmasi({
-      judul: 'Hapus tugas?',
-      pesan: `"${t.nama}" akan dihapus dari daftar.`,
-      labelAksi: 'Hapus',
-      onSetuju: async () => {
-        if (!kurangiGerak()) {
-          const a = li.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: 'ease-in' });
-          try { await a.finished; } catch { /* abaikan */ }
-        }
-        hapusTugas(t.id); renderDaftar(); perbaruiStatistik();
-        beriPesan('Tugas dihapus.');
-      },
-    });
+function hapusBaris(t, li) {
+  konfirmasi({
+    judul: 'Hapus tugas?',
+    pesan: `"${t.nama}" akan dihapus dari daftar.`,
+    labelAksi: 'Hapus',
+    onSetuju: async () => {
+      if (!kurangiGerak()) {
+        const a = li.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: 'ease-in' });
+        try { await a.finished; } catch { /* abaikan */ }
+      }
+      hapusTugas(t.id); renderDaftar(); perbaruiStatistik();
+      beriPesan('Tugas dihapus.');
+    },
   });
-  kanan.append(tag, bT, bH);
-  li.append(kiri, kanan);
-  li.addEventListener('mouseover', () => { preview.textContent = `${t.nama} dari ${t.mk}, deadline ${t.deadline}, prioritas ${t.prio}`; });
-  li.addEventListener('mouseout', () => { preview.textContent = ''; });
-  if (animasi && !kurangiGerak()) {
-    li.animate([{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }], { duration: 250, easing: 'ease-out' });
-  }
-  return li;
 }
 
 export function renderDaftar(idBaru = null) {
   if (idBaru !== null) idAnimasiBaru = idBaru;
   preview.textContent = '';
   const shown = saringTugas(searchI.value, filterI.value);
-  list.replaceChildren(...shown.map((t) => buatLi(t, t.id === idAnimasiBaru)));
+  list.replaceChildren(...shown.map((t) => BarisTugas(t, {
+    animasi: t.id === idAnimasiBaru && !kurangiGerak(),
+    onSelesai: (id) => { alihSelesai(id); renderDaftar(); perbaruiStatistik(); },
+    onHapus: hapusBaris,
+    onFokus: (x) => {
+      preview.textContent = x
+        ? `${x.nama} dari ${x.mk}, deadline ${x.deadline}, prioritas ${x.prio}` : '';
+    },
+  })));
   idAnimasiBaru = null;
   emptyEl.style.display = semuaTugas().length ? 'none' : 'block';
   noMatchEl.hidden = semuaTugas().length === 0 || shown.length > 0;
+  const peringatan = peringatanPenyimpanan();
+  storageMsg.textContent = peringatan;
+  storageMsg.hidden = peringatan === '';
 }
 
 export function renderPilihanMatkul() {
