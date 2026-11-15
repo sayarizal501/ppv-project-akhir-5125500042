@@ -17,7 +17,7 @@ Ukuran diambil dari tab Network DevTools dan header `Content-Length` CDN (gzip):
 | Total Bootstrap | sekitar 53 KB | 306 KB |
 
 Total halaman, yaitu HTML, CSS sendiri, gambar, dan font lokal, lebih dari
-500 KB. Dengan demikian pustaka ini masih di bawah sepertiga ukuran halaman.
+500 KB. Jadi pustaka ini masih di bawah sepertiga ukuran halaman.
 Popper.js sudah termasuk di dalam bundle, jadi tidak ada berkas lain yang ikut
 diunduh.
 
