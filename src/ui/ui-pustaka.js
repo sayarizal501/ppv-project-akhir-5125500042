@@ -1,4 +1,4 @@
-// ui-pustaka.js — satu-satunya modul yang memanggil API JavaScript Bootstrap.
+// ui-pustaka.js: satu-satunya modul yang memanggil API JavaScript Bootstrap.
 // Modul lain cukup memakai konfirmasi() dan beriPesan(); bila pustaka diganti,
 // hanya berkas ini yang disentuh.
 const elModal = document.querySelector('#modalKonfirmasi');

@@ -1,4 +1,4 @@
-// views.js — mengatur perpindahan tampilan Daftar, Statistik, Matkul, dan Tentang.
+// views.js: mengatur perpindahan tampilan Daftar, Statistik, Matkul, dan Tentang.
 import { animasikanStatistik, kurangiGerak } from './ui.js';
 
 let viewAktif = 'daftar';

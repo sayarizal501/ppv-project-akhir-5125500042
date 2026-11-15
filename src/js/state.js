@@ -1,4 +1,4 @@
-// state.js — pemilik data tugas dan mata kuliah beserta aturannya; bebas DOM.
+// state.js: pemilik data tugas dan mata kuliah beserta aturannya; bebas DOM.
 import { muatTugas, simpanTugas, muatMatkul, simpanMatkul } from './storage.js';
 
 let tugas = muatTugas();
