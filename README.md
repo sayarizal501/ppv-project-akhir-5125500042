@@ -18,7 +18,8 @@ python -m http.server 5500
 ```
 
 Buka <http://127.0.0.1:5500/>. Sejak memakai ES Modules, `index.html` tidak
-bisa dibuka langsung dengan klik dua kali (`file://`).
+bisa dibuka langsung dengan klik dua kali (`file://`). Di Windows, klik dua kali
+`jalankan.bat` untuk menyalakan server dan membuka halaman.
 
 Data tugas dan daftar mata kuliah disimpan di localStorage browser. Data itu
 hanya ada di browser yang dipakai, jadi kalau browser berganti, datanya tidak
