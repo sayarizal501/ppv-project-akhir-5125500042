@@ -12,8 +12,16 @@ sudah ada umumnya berat atau mewajibkan pembuatan akun lebih dulu.
 
 ## Pengguna
 
-Pengguna utama adalah mahasiswa D3 semester 3 berusia 20 tahun dengan 12 mata
-kuliah, yang sering membuka aplikasi dari ponsel dengan koneksi lambat.
+Persona (dipertajam di Tugas 7/P13 dari charter P09; arahnya tidak berubah):
+Dimas Arya, 20 tahun, mahasiswa D3 Teknologi Multimedia dan Broadcasting
+semester 3 dengan 12 mata kuliah dan satu kepanitiaan.
+
+Keseharian: kuliah dan praktikum dari pagi sampai sore, mengecek tugas dari
+ponsel di sela perjalanan dan malam hari dengan koneksi kos yang lambat.
+
+Masalah: deadline dari 12 mata kuliah dan kelompok datang lewat chat kelas,
+chat grup, dan kertas; tugas sering baru diingat sehari sebelum tenggat.
+
 Kebutuhannya adalah mencatat dengan cepat, melihat tugas yang mendesak, dan
 mengetahui berapa tugas yang sudah selesai, tanpa membuat akun.
 

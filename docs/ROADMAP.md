@@ -30,4 +30,8 @@ yang dapat didemokan.
   `tugasku:matkul:v1`, menyaring data rusak, dan punya cadangan memori. Dua
   skenario rusak diuji lewat DevTools: S2 (JSON `{rusak`) dan S6 (kuota penuh).
   Riwayat versi ada di `CHANGELOG.md` dan rilis ditandai tag `v0.4.0`.
-- Sprint P13 dan P14: belum dikerjakan.
+- **P13 (Sprint 5): konsep produk selesai.** Persona, masalah, solusi, fitur
+  berprioritas (dengan bukti commit/tag), dan tabel pembanding ada di
+  `docs/konsep/`; seluruh butir Pemeriksa konsep berstatus Lolos. Mockup
+  halaman utama dan satu halaman fitur belum dikerjakan.
+- Sprint P14: belum dikerjakan.
