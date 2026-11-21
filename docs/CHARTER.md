@@ -29,10 +29,21 @@ mengetahui berapa tugas yang sudah selesai, tanpa membuat akun.
 
 | Prioritas | Fitur |
 |---|---|
-| Must | Tambah tugas dengan validasi (nama, mata kuliah, deadline tidak boleh lewat, prioritas); tandai selesai dan batal; hapus dengan konfirmasi; data tetap ada setelah reload; cari dan filter; statistik persentase selesai |
-| Should | Tambah dan hapus mata kuliah sendiri; badge prioritas; notifikasi singkat saat menyimpan atau menghapus; rapi pada layar 400 px |
-| Could | Ekspor dan impor JSON; mode gelap; pintasan keyboard |
-| Won't | Login, sinkron antar perangkat, notifikasi push, backend, aplikasi mobile |
+| Must | Tambah tugas dengan validasi (nama, mata kuliah, deadline tidak boleh lewat, prioritas) |
+| Must | Tandai selesai/batal dan hapus dengan konfirmasi |
+| Must | Daftar tetap ada setelah reload |
+| Must | Cari, saring, dan statistik persentase selesai |
+| Should | Tambah dan hapus mata kuliah sendiri |
+| Should | Badge prioritas dan pesan singkat saat menyimpan atau menghapus |
+| Should | Tampilan rapi pada layar 400 px |
+| Should | Ekspor dan impor JSON (naik dari Could di Tugas 7/P13) |
+| Won't versi ini | Login dan akun pengguna; sinkron antar perangkat, backend, dan notifikasi push; mode gelap dan pintasan keyboard lengkap (Ctrl+K sudah ada); aplikasi mobile native |
+
+Catatan: tabel ini disinkronkan dengan `docs/konsep/` pada Tugas 7/P13. Must
+diringkas menjadi empat kelompok fitur yang sama dengan halaman konsep; ekspor
+dan impor JSON naik ke Should karena menyangkut keamanan data; mode gelap dan
+pintasan keyboard lengkap turun ke Won't versi ini karena kosmetik dan belum
+menjawab masalah utama.
 
 ## Ukuran berhasil
 
@@ -52,7 +63,7 @@ Dianggap berhasil bila:
 
 | Kalau terjadi | Akibatnya | Cara mengatasinya |
 |---|---|---|
-| localStorage terhapus (clear data atau mode privat) | Data hilang | Ekspor JSON di P12, beri peringatan di halaman Tentang |
+| localStorage terhapus (clear data atau mode privat) | Data hilang | Ekspor JSON (Should, belum dikerjakan), beri peringatan di halaman Tentang |
 | CDN Bootstrap gagal dimuat saat demo offline | Modal dan toast mati | Simpan salinan di assets/vendor, diperiksa sebelum demo |
 | Gaya Bootstrap bentrok dengan CSS sendiri | Layout rusak pada layar kecil | Bootstrap dimuat lebih dulu, kelas sendiri diberi nama berbeda, cek 400 px tiap sprint |
 | Waktu bentrok dengan tugas lain | Fitur Should dan Could tidak selesai | Fitur Won't sudah dibuang, Must dikerjakan lebih dulu |

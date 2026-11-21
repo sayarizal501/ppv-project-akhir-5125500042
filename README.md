@@ -3,11 +3,12 @@
 Aplikasi pencatat tugas kuliah berbasis web. Proyek akhir Praktikum Pemrograman
 Visual, Iqgam Afrizal (5125500042), D3 Teknologi Multimedia dan Broadcasting.
 
-Sprint 1 sampai Sprint 4 (P12) sudah selesai. Isi aplikasi berasal dari kode
-Tugas 4 yang dipindahkan ke folder `src/` dan ditambahkan Bootstrap. Sejak
-Sprint 3 kode dipecah menjadi ES Modules dengan `src/js/main.js` sebagai titik
-masuk. Sprint 4 menambahkan komponen baris tugas yang dipakai ulang dan
-penyimpanan aman berkunci versi.
+Sprint 1 sampai Sprint 4 (P12) sudah selesai. Sprint 5 (P13/Tugas 7) baru
+sebagian: konsep produk dan halaman `docs/konsep/` sudah ada, mockup belum.
+Isi aplikasi berasal dari kode Tugas 4 yang dipindahkan ke folder `src/` dan
+ditambahkan Bootstrap. Sejak Sprint 3 kode dipecah menjadi ES Modules dengan
+`src/js/main.js` sebagai titik masuk. Sprint 4 menambahkan komponen baris tugas
+yang dipakai ulang dan penyimpanan aman berkunci versi.
 
 ## Cara menjalankan
 
@@ -100,8 +101,9 @@ BarisTugas(tugas, { onSelesai, onHapus, onFokus, animasi }) -> HTMLElement
 ## Dokumen
 
 - [Changelog](CHANGELOG.md): riwayat versi v0.1.0 sampai v0.4.0
-- [Roadmap](docs/ROADMAP.md): rencana sprint P10 sampai P14 dan status Sprint 4
+- [Roadmap](docs/ROADMAP.md): rencana sprint P10 sampai P14 dan status tiap sprint
 - [Charter](docs/CHARTER.md): masalah, fitur MoSCoW, dan risiko
+- [Konsep produk](docs/konsep/index.html): persona, masalah, fitur berprioritas, dan pembanding (Tugas 7/P13). Buka lewat server lokal, misalnya `python -m http.server 5500`, lalu `http://127.0.0.1:5500/docs/konsep/`.
 - [BUGS.md](docs/BUGS.md): catatan bug hasil uji sprint
 - [DEBUG_LOG.md](docs/DEBUG_LOG.md): proses dua bug Sprint 2 dan perbaikannya
 - [MODULE_MAP.md](MODULE_MAP.md): peta modul dan tanggung jawab
@@ -122,4 +124,5 @@ BarisTugas(tugas, { onSelesai, onHapus, onFokus, animasi }) -> HTMLElement
 - `assets/images/hero.svg` dan `assets/images/ikon-tugas.svg`: gambar vektor
   buatan sendiri untuk proyek ini.
 - AI digunakan untuk membantu menyusun komponen `BarisTugas` dan penyimpanan
-  aman berkunci versi pada Sprint 4.
+  aman berkunci versi pada Sprint 4, serta merapikan teks konsep produk dan
+  halaman `docs/konsep/` pada Tugas 7/P13.
