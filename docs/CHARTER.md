@@ -13,7 +13,7 @@ sudah ada umumnya berat atau mewajibkan pembuatan akun lebih dulu.
 ## Pengguna
 
 Persona (dipertajam di Tugas 7/P13 dari charter P09; arahnya tidak berubah):
-Dimas Arya, 20 tahun, mahasiswa D3 Teknologi Multimedia dan Broadcasting
+Azcanio Almere, 20 tahun, mahasiswa D3 Teknologi Rekayasa Multimedia
 semester 3 dengan 12 mata kuliah dan satu kepanitiaan.
 
 Keseharian: kuliah dan praktikum dari pagi sampai sore, mengecek tugas dari
