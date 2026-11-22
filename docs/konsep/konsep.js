@@ -1,4 +1,4 @@
-// konsep.js — data konsep produk TugasKu untuk halaman konsep Tugas 7.
+// konsep.js - data konsep produk TugasKu untuk halaman konsep Tugas 7.
 // Status "selesai" menunjuk commit/tag di repositori ppv-project-akhir-5125500042.
 const KONSEP = {
   nama: 'TugasKu',

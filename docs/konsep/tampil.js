@@ -1,4 +1,4 @@
-// tampil.js — merender KONSEP menjadi halaman dan memeriksa aturan Tugas 7. Tidak perlu diubah.
+// tampil.js - merender KONSEP menjadi halaman dan memeriksa aturan Tugas 7. Tidak perlu diubah.
 const $ = (s) => document.querySelector(s);
 const PRIORITAS = { wajib: 'Wajib ada', sebaiknya: 'Sebaiknya ada', belum: 'Belum perlu' };
 
@@ -33,7 +33,7 @@ function periksa(k) {
 }
 
 function tampil(k) {
-  document.title = `${k.nama} — Konsep Produk`;
+  document.title = `${k.nama} - Konsep Produk`;
   $('#nama').textContent = k.nama;
   $('#tagline').textContent = k.tagline;
 
@@ -54,7 +54,7 @@ function tampil(k) {
     const daftar = el('ul');
     k.fitur.filter((f) => f.prioritas === kode).forEach((f) => {
       const li = el('li');
-      li.append(el('strong', f.nama), document.createTextNode(' — ' + f.alasan));
+      li.append(el('strong', f.nama), document.createTextNode(' - ' + f.alasan));
       daftar.append(li);
     });
     kol.append(el('div', label, 'label'), daftar);

@@ -1,4 +1,4 @@
-# Peta Modul TugasKu — Sprint 4 (P12)
+# Peta Modul TugasKu - Sprint 4 (P12)
 
 Titik masuk: `index.html` memuat satu `<script type="module" src="src/js/main.js">`.
 Arah dependensi satu jalur, tanpa impor melingkar.
