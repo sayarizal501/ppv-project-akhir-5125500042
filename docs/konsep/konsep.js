@@ -5,7 +5,7 @@ const KONSEP = {
   tagline: 'Catat tugas kuliah dalam 30 detik, tanpa akun.',
   persona: {
     nama: 'Azcanio Almere, 20 tahun',
-    siapa: 'Mahasiswa D3 Teknologi Rekayasa Multimedia semester 3 dengan 12 mata kuliah dan satu kepanitiaan.',
+    siapa: 'Mahasiswa D4 Teknologi Rekayasa Multimedia semester 3 dengan 12 mata kuliah dan satu kepanitiaan.',
     keseharian: 'Kuliah dan praktikum dari pagi sampai sore, mengecek tugas dari ponsel di sela perjalanan dan malam hari dengan koneksi kos yang lambat.',
     masalah: 'Deadline dari 12 mata kuliah dan kelompok datang lewat chat kelas, chat grup, dan kertas; tugas sering baru diingat sehari sebelum tenggat.',
   },
