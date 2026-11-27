@@ -265,7 +265,7 @@ adalah penyimpanan dan sinkronisasinya.
 | Slide 10 halaman | Selesai, `docs/slide-demo-akhir.pdf` |
 | Commit akhir dan tag `v1.0.0` | Selesai |
 | Uji 3 pengguna P14 dengan angka | Belum, protokol siap di `docs/UJI_USABILITY_P14.md` |
-| Ganti nama PDF jadi `5125500042_Iqgam Afrizal_PPV_DemoAkhir.pdf` | Belum, dilakukan saat mengunggah |
+| PDF bernama `5125500042_Iqgam Afrizal_PPV_DemoAkhir.pdf` | Selesai, ada di folder induk proyek |
 | Tautan repositori dan tag final di slide pertama | Sudah ada di slide 1 |
 
 ## 12. Berkas yang berubah
