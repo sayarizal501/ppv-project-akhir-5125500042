@@ -92,7 +92,7 @@ figcaption{font-size:13px;color:var(--abu);padding:8px 12px;border-top:1px solid
 .sumber{margin-top:18px;font-size:13px}
 
 /* perbaikan */
-.ubah{display:grid;grid-template-columns:1fr 36px 1fr;gap:12px;align-items:center;background:#fff;border:1px solid var(--garis);
+.ubah{display:grid;grid-template-columns:minmax(0,330px) 36px minmax(0,1fr);gap:12px;align-items:center;background:#fff;border:1px solid var(--garis);
   border-radius:10px;padding:18px 20px;margin-bottom:14px}
 .ubah .lama{font-size:20px;color:var(--abu);text-decoration:line-through;text-decoration-thickness:2px}
 .ubah .baru{font-size:20px;font-weight:700;color:var(--biru)}
@@ -274,6 +274,10 @@ figcaption{font-size:13px;color:var(--abu);padding:8px 12px;border-top:1px solid
     <div><b>0</b><span>galat Console di alur utama setelah perbaikan</span></div>
   </div>
   <p class="sumber">Sumber: laporan Tugas 4, pengujian Fara dan Nio pada 10 Oktober 2026. Peserta diminta menambah lalu menandai selesai satu tugas tanpa didampingi.</p>
+  <div class="kotak" style="margin-top:26px">
+    <h3 style="font-size:17px;margin-bottom:8px">Rencana uji P14</h3>
+    <p style="font-size:15px">Tiga peserta, satu tugas yang sama, tanpa didampingi. Yang dicatat: waktu menambah (target ≤30 detik), jumlah interaksi (≤6), berhasil tanpa bantuan (≥2 dari 3), dan waktu menandai selesai. Protokol dan formulir: <span class="mono">docs/UJI_USABILITY_P14.md</span>.</p>
+  </div>
   <div class="kaki"><span>Uji P14 dengan 3 pengguna: protokol tersedia di docs/UJI_USABILITY_P14.md</span><span>Charter: minimal 2 dari 3 berhasil tanpa dibantu</span></div>
 </section>
 
