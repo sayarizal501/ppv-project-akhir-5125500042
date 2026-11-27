@@ -35,4 +35,11 @@ yang dapat didemokan.
   `docs/konsep/`; seluruh butir Pemeriksa konsep berstatus Lolos, dan tabel
   MoSCoW di `docs/CHARTER.md` sudah disinkronkan dengan konsep. Mockup halaman
   utama dan satu halaman fitur belum dikerjakan, jadi P13 belum selesai penuh.
-- Sprint P14: belum dikerjakan.
+- **P14 (Demo akhir): demo siap.** Kit demo sudah terpasang di `index.html` dan
+  `demo-kit.js`, dengan `DEMO_KIT.isiContoh` berisi 6 tugas contoh dan
+  `kunciStorage` yang sama dengan `storage.js`. Isi contoh, Reset, spanduk
+  kesalahan, dan warna timer menit ke-5/ke-7 sudah diuji. Bahan demo lengkap:
+  `docs/LAPORAN_DEMO_AKHIR.md`, 10 slide di `docs/slide-demo-akhir.pdf`, dan
+  rekaman cadangan `docs/video/demo-cadangan-60detik.mp4`. Rilis ditandai tag
+  `v1.0.0`. Yang belum: uji 3 pengguna, protokolnya siap di
+  `docs/UJI_USABILITY_P14.md`.

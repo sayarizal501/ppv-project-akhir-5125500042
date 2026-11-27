@@ -3,6 +3,30 @@
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/id/1.1.0/),
 versi mengikuti [Semantic Versioning](https://semver.org/lang/id/).
 
+## [1.0.0] - 2026-11-27
+
+Rilis demo akhir (P14). Aplikasi tidak berubah perilakunya; yang ditambahkan
+adalah alat demo, bukti uji, dan bahan presentasi.
+
+### Added
+- `demo-kit.js` dan pengaturan `window.DEMO_KIT` di `index.html`: tombol Isi
+  contoh (6 tugas, 2 selesai) dan Reset yang hanya aktif pada `?demo=1`.
+- Pengatur waktu demo yang berubah oranye pada menit ke-5 dan merah pada menit
+  ke-7.
+- `docs/LAPORAN_DEMO_AKHIR.md`: laporan persiapan demo, hasil uji kit, skenario
+  5-7 menit, potongan kode andalan, dan jawaban pertanyaan seribu pengguna.
+- `docs/UJI_USABILITY_P14.md`: protokol dan formulir uji 3 pengguna.
+- `docs/slide-demo-akhir.html` dan `docs/slide-demo-akhir.pdf`: 10 slide demo.
+- `docs/video/demo-cadangan-60detik.mp4`: rekaman cadangan alur utama.
+- Tangkapan layar panel demo, spanduk kesalahan, dan timer menit ke-5/ke-7 di
+  `docs/screenshots/`.
+
+### Changed
+- `src/css/style.css`: panel demo menjadi bilah penuh di atas halaman supaya
+  tidak menutup navigasi dan formulir.
+- `README.md`: bagian Mode demo.
+- `docs/konsep/konsep.js`: alasan tiap fitur ditulis ulang lebih lengkap.
+
 ## [0.4.0] - 2026-11-13
 
 ### Added

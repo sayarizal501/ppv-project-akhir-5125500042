@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Demo Akhir P14 - TugasKu</title>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:block;src:url("../assets/fonts/inter-latin-400.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:block;src:url("../assets/fonts/inter-latin-600.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:block;src:url("../assets/fonts/inter-latin-700.woff2") format("woff2")}
+:root{
+  --kertas:#faf9f7; --tinta:#201d17; --abu:#57534a; --garis:#d8d3c7;
+  --biru:#0b57d0; --biru-tua:#0847b3; --merah:#b3261e; --oranye:#b26a00;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#cfcabf;font-family:"Inter",system-ui,sans-serif;color:var(--tinta)}
+.slide{width:1280px;height:720px;background:var(--kertas);position:relative;overflow:hidden;
+  padding:54px 72px 46px;page-break-after:always;break-after:page;margin:0 auto 18px}
+.slide:last-child{page-break-after:auto;break-after:auto;margin-bottom:0}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--biru)}
+.nomor{position:absolute;top:56px;right:72px;font-size:13px;font-weight:600;color:var(--abu);letter-spacing:.08em}
+h2{font-size:42px;line-height:1.08;letter-spacing:-.025em;margin:14px 0 0;max-width:1000px}
+h3{font-size:20px;line-height:1.2;margin:0 0 6px}
+p{margin:0;font-size:18px;line-height:1.5;color:var(--abu)}
+.lead{font-size:24px;line-height:1.45;color:var(--abu);max-width:560px}
+.mono{font-family:"Consolas","SFMono-Regular",monospace;font-size:13px}
+.dua{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;margin-top:34px}
+.tiga{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.kotak{background:#fff;border:1px solid var(--garis);border-radius:10px;padding:22px 22px 20px}
+.kotak p{font-size:16px}
+.angka{display:block;font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--biru);margin-bottom:14px}
+.pita{margin-top:30px;border-left:4px solid var(--biru);background:#eef3fc;padding:16px 20px;font-size:18px;line-height:1.45}
+.pita b{font-weight:700}
+.frame{margin:0;border:1px solid var(--garis);border-radius:10px;overflow:hidden;background:#fff}
+.frame img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:var(--abu);padding:8px 12px;border-top:1px solid var(--garis)}
+.kaki{position:absolute;left:72px;right:72px;bottom:34px;display:flex;justify-content:space-between;gap:24px;
+  border-top:1px solid var(--garis);padding-top:12px;font-size:12px;color:var(--abu);letter-spacing:.02em}
+
+/* cover */
+.cover{padding-top:64px}
+.cover h1{font-size:104px;line-height:.92;letter-spacing:-.055em;margin:18px 0 10px}
+.cover .lead{font-size:23px;max-width:520px}
+.identitas{margin-top:38px;display:grid;grid-template-columns:auto auto;gap:4px 18px;font-size:15px;color:var(--abu)}
+.identitas b{color:var(--tinta);font-weight:600}
+.cover .frame{transform:translateY(6px)}
+.demo-shot img{height:330px;object-fit:cover;object-position:top left}
+.cover .kaki{position:absolute}
+
+/* langkah */
+.langkah{list-style:none;margin:0;padding:0;counter-reset:l}
+.langkah li{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--garis)}
+.langkah li:first-child{padding-top:0}
+.langkah li:last-child{border-bottom:0}
+.langkah .n{font-size:13px;font-weight:700;color:var(--biru);padding-top:3px}
+.langkah b{display:block;font-size:19px;margin-bottom:2px}
+.langkah span{font-size:15px;color:var(--abu)}
+.catatan{margin-top:18px;font-size:14px;color:var(--abu)}
+
+/* demo */
+.poin{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--garis)}
+.poin:first-child{padding-top:0}
+.poin b{font-size:16px}
+.poin span{font-size:15px;color:var(--abu);display:block;margin-top:2px}
+.timer-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.timer-row .frame img{height:52px;object-fit:cover;object-position:top}
+.timer-row figcaption{font-size:12px;padding:6px 10px}
+
+/* kode */
+.kode{background:#1d1b17;color:#e8e4db;border-radius:10px;padding:24px 24px;font:13px/1.65 "Consolas","SFMono-Regular",monospace;
+  white-space:pre;overflow:hidden;margin:0}
+.kode .k{color:#8fb6ff}
+.kode .c{color:#9b9486}
+.kode .s{color:#e6b06a}
+.alasan{display:grid;gap:16px}
+.alasan>div{display:grid;grid-template-columns:34px 1fr;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--garis)}
+.alasan>div:last-child{border-bottom:0}
+.alasan .n{font-size:13px;font-weight:700;color:var(--biru);padding-top:2px}
+.alasan b{font-size:17px;display:block;margin-bottom:3px}
+.alasan p{font-size:15px}
+
+/* tabel */
+.tabel{width:100%;border-collapse:collapse;margin-top:26px;font-size:16px}
+.tabel th{text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--abu);
+  border-bottom:2px solid var(--tinta);padding:0 12px 8px 0}
+.tabel td{border-bottom:1px solid var(--garis);padding:13px 12px 13px 0;vertical-align:top;line-height:1.35}
+.tabel td:first-child{font-weight:600;width:110px}
+.tabel .kecil td,.tabel .kecil th{font-size:14px;padding-top:9px;padding-bottom:9px}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.stat-row div{background:#fff;border:1px solid var(--garis);border-radius:10px;padding:18px 20px}
+.stat-row b{display:block;font-size:38px;letter-spacing:-.03em;line-height:1;color:var(--biru);margin-bottom:8px}
+.stat-row span{font-size:14px;color:var(--abu);line-height:1.35;display:block}
+.sumber{margin-top:18px;font-size:13px}
+
+/* perbaikan */
+.ubah{display:grid;grid-template-columns:1fr 36px 1fr;gap:12px;align-items:center;background:#fff;border:1px solid var(--garis);
+  border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.ubah .lama{font-size:20px;color:var(--abu);text-decoration:line-through;text-decoration-thickness:2px}
+.ubah .baru{font-size:20px;font-weight:700;color:var(--biru)}
+.ubah .panah{font-size:22px;color:var(--abu);text-align:center}
+.ubah p{grid-column:1 / -1;font-size:14px;margin-top:4px}
+
+/* linimasa */
+.linimasa{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:34px;border-top:2px solid var(--tinta)}
+.linimasa div{padding:14px 12px 0 0;border-right:1px solid var(--garis)}
+.linimasa div:last-child{border-right:0}
+.linimasa b{display:block;font-size:15px;color:var(--biru)}
+.linimasa span{display:block;font-size:13px;color:var(--abu);margin-top:4px;line-height:1.35}
+.linimasa .kini b{color:var(--merah)}
+
+/* diagram */
+.diagram{display:flex;align-items:center;gap:10px;margin:10px 0 18px}
+.node{flex:1;background:#fff;border:1px solid var(--garis);border-radius:8px;padding:14px 10px;text-align:center;font-size:14px;font-weight:600}
+.node.aksen{border-color:var(--biru);color:var(--biru)}
+.panah2{font-size:20px;color:var(--abu)}
+.bahaya{border-left:4px solid var(--merah)}
+.bahaya ul{margin:12px 0 0;padding-left:18px;font-size:15px;line-height:1.6;color:var(--abu)}
+.bahaya li{margin-bottom:4px}
+
+/* cadangan */
+.cadangan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.cadangan>div{background:#fff;border:1px solid var(--garis);border-radius:10px;padding:20px 22px}
+.cadangan .n{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--biru)}
+.cadangan h3{margin:8px 0 5px;font-size:19px}
+.cadangan p{font-size:14px}
+.penutup{position:absolute;left:72px;right:72px;bottom:46px;display:flex;justify-content:space-between;align-items:flex-end;
+  border-top:2px solid var(--tinta);padding-top:22px}
+.penutup h2{font-size:38px;margin-top:6px}
+.penutup .kanan{text-align:right;font-size:12px;color:var(--abu);line-height:1.7}
+
+@page{size:1280px 720px;margin:0}
+@media print{
+  html,body{background:#fff}
+  .slide{margin:0;box-shadow:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="slide cover">
+  <div class="kicker">Demo Akhir P14 · Praktikum Pemrograman Visual · TB033109</div>
+  <div class="nomor">01 / 10</div>
+  <div class="dua" style="grid-template-columns:1.05fr .95fr;margin-top:26px;align-items:center">
+    <div>
+      <h1>TugasKu</h1>
+      <p class="lead">Pencatat tugas kuliah tanpa akun. Catat, tandai selesai, dan lihat progres dari satu halaman.</p>
+      <div class="identitas">
+        <b>Iqgam Afrizal</b><span>5125500042</span>
+        <b>Kelas</b><span>3 D3 MM B</span>
+        <b>Dosen</b><span>Aji Sapta Pramulen, S.T., M.T.</span>
+        <b>Tanggal</b><span>27 November 2026</span>
+      </div>
+    </div>
+    <figure class="frame">
+      <img src="screenshots/proyek-daftar-p14.png" alt="Halaman Daftar Tugas TugasKu dengan enam tugas contoh">
+    </figure>
+  </div>
+  <div class="kaki">
+    <span>Repositori Project Akhir</span>
+    <span class="mono">github.com/sayarizal501/ppv-project-akhir-5125500042 · tag v1.0.0</span>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="kicker">01 · Masalah dan pengguna</div>
+  <div class="nomor">02 / 10</div>
+  <h2>Deadline tersebar di tiga tempat.</h2>
+  <div class="tiga">
+    <div class="kotak"><span class="angka">01</span><h3>Chat kelas</h3><p>Informasi tugas dan perubahan tenggat bercampur dengan obrolan lain.</p></div>
+    <div class="kotak"><span class="angka">02</span><h3>Chat kelompok</h3><p>Pembagian tugas kelompok dicatat di percakapan yang berbeda.</p></div>
+    <div class="kotak"><span class="angka">03</span><h3>Kertas dan catatan</h3><p>Catatan cepat tidak terbaca lagi saat minggu sibuk.</p></div>
+  </div>
+  <div class="pita"><b>Akibatnya</b> ada tugas yang terlewat dan prioritas tertukar. Yang dibutuhkan satu tempat untuk melihat sisa tugas, bukan aplikasi yang menambah akun dan lapisan baru.</div>
+  <p style="margin-top:24px;font-size:15px">Persona: Azcanio Almere, 20 tahun, mahasiswa semester 3 dengan 12 mata kuliah dan satu kepanitiaan.</p>
+  <div class="kaki"><span>Masalah dari charter P09, dipertajam di Tugas 7/P13</span><span>12 MK · 3 kanal · 1 tempat</span></div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="kicker">02 · Produk dan alur</div>
+  <div class="nomor">03 / 10</div>
+  <h2>Satu halaman, empat langkah.</h2>
+  <div class="dua" style="grid-template-columns:.9fr 1.1fr">
+    <ol class="langkah">
+      <li><span class="n">01</span><div><b>Catat tugas</b><span>Nama, mata kuliah, deadline, prioritas. Target ≤30 detik dan ≤6 interaksi.</span></div></li>
+      <li><span class="n">02</span><div><b>Tandai selesai</b><span>Satu klik, langsung tersimpan. Bisa dibatalkan.</span></div></li>
+      <li><span class="n">03</span><div><b>Cari dan saring</b><span>Berdasarkan nama, mata kuliah, status, atau prioritas Tinggi.</span></div></li>
+      <li><span class="n">04</span><div><b>Lihat statistik</b><span>Persentase dan jumlah tugas yang sudah selesai.</span></div></li>
+    </ol>
+    <figure class="frame">
+      <img src="screenshots/proyek-daftar-p14.png" alt="Halaman Daftar Tugas dengan formulir dan daftar enam tugas">
+      <figcaption>Daftar Tugas: formulir di kiri, daftar dan pencarian di kanan.</figcaption>
+    </figure>
+  </div>
+  <p class="catatan">Tanpa akun · data di localStorage · tetap ada setelah reload · berjalan dari server statis.</p>
+  <div class="kaki"><span>Empat tampilan: Daftar, Statistik, Matkul, Tentang</span><span>Bootstrap 5.3.3 · ES Modules</span></div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <div class="kicker">03 · Demo langsung</div>
+  <div class="nomor">04 / 10</div>
+  <h2>Demo dimulai dari data yang sama.</h2>
+  <div class="dua" style="grid-template-columns:1.1fr .9fr;margin-top:26px">
+    <figure class="frame demo-shot">
+      <img src="screenshots/demo-kit.jpeg" alt="Aplikasi dengan bilah kit demo di atas: waktu, Isi contoh, dan Reset">
+      <figcaption>Kit demo aktif hanya dengan <span class="mono">?demo=1</span>.</figcaption>
+    </figure>
+    <div>
+      <div class="poin"><div class="mono" style="color:var(--biru);padding-top:2px">01</div><div><b>Isi contoh</b><span>Enam tugas, dua selesai. Statistik langsung 33%.</span></div></div>
+      <div class="poin"><div class="mono" style="color:var(--biru);padding-top:2px">02</div><div><b>Reset</b><span>Menghapus data demo agar latihan dan demo di kelas identik.</span></div></div>
+      <div class="poin"><div class="mono" style="color:var(--biru);padding-top:2px">03</div><div><b>Pengatur waktu</b><span>Oranye di menit ke-5, merah di menit ke-7.</span></div></div>
+      <div class="timer-row">
+        <figure class="frame"><img src="screenshots/timer-5menit.png" alt="Bilah demo berwarna oranye pada 05:10"><figcaption>05:10 · oranye</figcaption></figure>
+        <figure class="frame"><img src="screenshots/timer-7menit.png" alt="Bilah demo berwarna merah pada 07:10"><figcaption>07:10 · merah</figcaption></figure>
+      </div>
+    </div>
+  </div>
+  <div class="kaki"><span>Uji timer memakai Chrome headless dengan waktu virtual</span><span>5-7 menit · rencana cadangan 60 detik</span></div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="kicker">04 · Satu bagian kode</div>
+  <div class="nomor">05 / 10</div>
+  <h2>Satu pintu untuk data.</h2>
+  <div class="dua" style="grid-template-columns:1.05fr .95fr;margin-top:26px;gap:40px">
+    <pre class="kode"><span class="c">// src/js/storage.js</span>
+<span class="k">function</span> baca(kunci, kunciLama, saring, cadangan) {
+  <span class="k">let</span> isi;
+  <span class="k">try</span> {
+    isi = localStorage.getItem(kunci);
+  } <span class="k">catch</span> {
+    pesan = PESAN_BLOKIR;
+    <span class="k">return</span> cadangan;
+  }
+  <span class="c">// ... migrasi kunci lama</span>
+  <span class="k">try</span> {
+    <span class="k">const</span> data = saring(JSON.parse(isi));
+    pesan = Array.isArray(mentah) ? <span class="s">''</span> : PESAN_RUSAK;
+    <span class="k">return</span> data;
+  } <span class="k">catch</span> {
+    pesan = PESAN_RUSAK;
+    <span class="k">return</span> [];
+  }
+}</pre>
+    <div class="alasan">
+      <div><span class="n">01</span><div><b>Satu pintu</b><p>Hanya modul ini yang membaca dan menulis localStorage. Aturan penyimpanan tidak tersebar.</p></div></div>
+      <div><span class="n">02</span><div><b>Tidak pernah melempar galat</b><p>JSON rusak, data bukan array, atau penyimpanan diblokir menghasilkan daftar kosong dan pesan.</p></div></div>
+      <div><span class="n">03</span><div><b>Kunci berversi dan migrasi</b><p>Data lama di kunci <span class="mono">tugas</span>/<span class="mono">matkul</span> dipindah sekali ke <span class="mono">v1</span>, lalu dihapus.</p></div></div>
+      <div><span class="n">04</span><div><b>Mudah diganti ke server</b><p>Untuk seribu pengguna, cukup isi modul ini dengan panggilan API. Modul lain tidak berubah.</p></div></div>
+    </div>
+  </div>
+  <div class="kaki"><span>Alasan desain: keselamatan data dan batas modul</span><span>Diuji dengan JSON rusak dan kuota penuh (P12)</span></div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="kicker">05 · Uji usability</div>
+  <div class="nomor">06 / 10</div>
+  <h2>Dua penguji, dua temuan, keduanya diperbaiki.</h2>
+  <table class="tabel">
+    <thead><tr><th>Penguji</th><th>Temuan</th><th>Angka</th><th>Perbaikan</th></tr></thead>
+    <tbody>
+      <tr><td>Fara</td><td>Mengira menu "Daftar" adalah pendaftaran akun.</td><td>40 detik berhenti di menu</td><td>Label diganti "Daftar Tugas".</td></tr>
+      <tr><td>Nio</td><td>Sulit membedakan prioritas Tinggi dan Sedang saat tugas banyak.</td><td>50 detik mencari</td><td>Tinggi diurutkan di atas dan diberi garis merah.</td></tr>
+    </tbody>
+  </table>
+  <div class="stat-row">
+    <div><b>2/2</b><span>temuan diperbaiki dan diuji ulang</span></div>
+    <div><b>40-50</b><span>detik waktu berhenti sebelum perbaikan</span></div>
+    <div><b>0</b><span>galat Console di alur utama setelah perbaikan</span></div>
+  </div>
+  <p class="sumber">Sumber: laporan Tugas 4, pengujian Fara dan Nio pada 10 Oktober 2026. Peserta diminta menambah lalu menandai selesai satu tugas tanpa didampingi.</p>
+  <div class="kaki"><span>Uji P14 dengan 3 pengguna: protokol tersedia di docs/UJI_USABILITY_P14.md</span><span>Charter: minimal 2 dari 3 berhasil tanpa dibantu</span></div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <div class="kicker">06 · Perbaikan</div>
+  <div class="nomor">07 / 10</div>
+  <h2>Yang berubah setelah uji.</h2>
+  <div style="margin-top:28px">
+    <div class="ubah">
+      <div class="lama">"Daftar"</div><div class="panah">→</div><div class="baru">"Daftar Tugas"</div>
+      <p>Fara berhenti 40 detik karena mengira menu itu pendaftaran akun. Setelah label diganti, penguji langsung paham tanpa bertanya.</p>
+    </div>
+    <div class="ubah">
+      <div class="lama">Prioritas bercampur</div><div class="panah">→</div><div class="baru">Tinggi di atas + garis merah</div>
+      <p>Nio membutuhkan 50 detik untuk menemukan tugas mendesak. Setelah urutan dan penanda diperbaiki, tugas Tinggi ditemukan tanpa mencari.</p>
+    </div>
+  </div>
+  <div class="pita"><b>Perbaikan lain dari uji sprint:</b> data localStorage rusak tidak mematikan halaman, kuota penuh tidak melempar galat, dan teks pengguna ditampilkan lewat <span class="mono">textContent</span>, bukan HTML.</div>
+  <div class="kaki"><span>Bukti: docs/BUGS.md dan docs/DEBUG_LOG.md</span><span>Console bersih di alur tambah, selesai, cari, statistik, hapus</span></div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="kicker">07 · Sejarah sprint</div>
+  <div class="nomor">08 / 10</div>
+  <h2>Enam sprint, satu produk.</h2>
+  <div class="linimasa">
+    <div><b>P09</b><span>Charter, masalah, persona</span></div>
+    <div><b>P10</b><span>Debug, commit fix, merge cabang</span></div>
+    <div><b>P11</b><span>ES Modules, hapus global</span></div>
+    <div><b>P12</b><span>Komponen, simpan aman, tag v0.4.0</span></div>
+    <div><b>P13</b><span>Konsep produk, mockup sebagian</span></div>
+    <div class="kini"><b>P14</b><span>Kit demo, uji, tag v1.0.0</span></div>
+  </div>
+  <table class="tabel kecil" style="margin-top:26px">
+    <thead><tr><th>Sprint</th><th>Rencana</th><th>Terealisasi</th><th>Bukti</th></tr></thead>
+    <tbody>
+      <tr><td>P10</td><td>Perbaiki bug dan data rusak</td><td>Selesai</td><td>125f308, 26b86fc, DEBUG_LOG</td></tr>
+      <tr><td>P11</td><td>Pecah app.js menjadi modul</td><td>Selesai</td><td>Merge refactor/modul fe57af5</td></tr>
+      <tr><td>P12</td><td>Komponen dan simpan aman</td><td>Selesai</td><td>1fde1ae, d1ad2c3, v0.4.0</td></tr>
+      <tr><td>P13</td><td>Konsep dan dua mockup</td><td>Sebagian</td><td>docs/konsep/</td></tr>
+      <tr><td>P14</td><td>Demo dan repo final</td><td>Demo siap</td><td>v1.0.0, laporan, rekaman</td></tr>
+    </tbody>
+  </table>
+  <div class="kaki"><span>CHANGELOG v0.1.0 - v1.0.0</span><span class="mono">github.com/sayarizal501/ppv-project-akhir-5125500042</span></div>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <div class="kicker">08 · Skala</div>
+  <div class="nomor">09 / 10</div>
+  <h2>Seribu pengguna: yang rusak lebih dulu.</h2>
+  <div class="dua" style="grid-template-columns:.95fr 1.05fr;margin-top:28px">
+    <div class="kotak bahaya">
+      <h3>localStorage hari ini</h3>
+      <ul>
+        <li>Satu peramban, satu perangkat. Tidak ada sinkronisasi.</li>
+        <li>Kuota sekitar 5 MB per origin. Daftar panjang bisa gagal simpan.</li>
+        <li>Tidak ada cadangan; data hilang saat data peramban dibersihkan.</li>
+        <li>Tidak ada login, jadi tidak ada kepemilikan data per pengguna.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="diagram">
+        <div class="node aksen">Browser</div><div class="panah2">→</div>
+        <div class="node">API</div><div class="panah2">→</div>
+        <div class="node">Basis data</div>
+      </div>
+      <p style="font-size:16px">Rencana: pindahkan data ke API dan basis data, tambahkan autentikasi, lalu sediakan ekspor/impor JSON. Karena hanya <span class="mono">storage.js</span> yang menyentuh penyimpanan, modul lain tidak perlu dibongkar.</p>
+      <p style="font-size:16px;margin-top:12px">Halaman statis tetap sanggup melayani seribu pengguna. Yang belum siap adalah penyimpanan dan sinkronisasinya.</p>
+    </div>
+  </div>
+  <div class="pita"><b>Yang pertama rusak:</b> data pengguna terpisah dan tidak bisa dipulihkan, bukan halaman webnya.</div>
+  <div class="kaki"><span>Batas versi ini: web statis, satu pengguna per browser</span><span>Ekspor/impor JSON berstatus Should, belum dibuat</span></div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <div class="kicker">09 · Cadangan dan penutup</div>
+  <div class="nomor">10 / 10</div>
+  <h2>Rencana cadangan.</h2>
+  <div class="cadangan">
+    <div><span class="n">01</span><h3>Rekaman 60 detik</h3><p>Alur utama dari Isi contoh sampai Statistik. Berkas <span class="mono">docs/video/demo-cadangan-60detik.mp4</span>.</p></div>
+    <div><span class="n">02</span><h3>Server lokal</h3><p>Aplikasi dijalankan lewat <span class="mono">jalankan.bat</span>, bukan klik dua kali. Bootstrap disalin lokal bila internet kelas bermasalah.</p></div>
+    <div><span class="n">03</span><h3>Data dan versi</h3><p>Repo dengan tag <span class="mono">v1.0.0</span>, PDF slide, dan rekaman disimpan di satu folder.</p></div>
+    <div><span class="n">04</span><h3>Latihan</h3><p>Dua kali latihan dengan timer kit demo, lalu Reset agar demo di kelas mulai dari keadaan yang sama.</p></div>
+  </div>
+  <div class="penutup">
+    <div>
+      <div class="kicker">TugasKu</div>
+      <h2>Catat 30 detik, tanpa akun.</h2>
+    </div>
+    <div class="kanan">
+      <div class="mono">github.com/sayarizal501/ppv-project-akhir-5125500042</div>
+      <div>Tag final v1.0.0 · 27 November 2026</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

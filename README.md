@@ -26,6 +26,20 @@ Data tugas dan daftar mata kuliah disimpan di localStorage browser. Data itu
 hanya ada di browser yang dipakai, jadi kalau browser berganti, datanya tidak
 ikut pindah.
 
+## Mode demo (P14)
+
+Kit demo hanya aktif bila alamat diakhiri `?demo=1`:
+
+```
+http://127.0.0.1:5500/?demo=1
+```
+
+Panel di atas berisi tombol **Isi contoh** (6 tugas, 2 selesai), **Reset**, dan
+pengatur waktu 5-7 menit. Tanpa `?demo=1` panel tidak muncul dan aplikasi
+berjalan seperti biasa. Data contoh dan kunci yang dihapus diatur di
+`window.DEMO_KIT` pada `index.html`; langkah lengkapnya ada di
+`docs/LAPORAN_DEMO_AKHIR.md`.
+
 ## Fitur MVP dan status
 
 | Fitur | Status | Keterangan |

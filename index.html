@@ -160,6 +160,33 @@
   <div class="toast-container position-fixed bottom-0 end-0 p-3" id="areaToast"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Kit demo P14: data contoh dan reset hanya aktif bila alamat diakhiri ?demo=1. -->
+  <script>
+    window.DEMO_KIT = {
+      kunciStorage: ['tugasku:tugas:v1', 'tugasku:matkul:v1'],
+      isiContoh() {
+        const tanggal = (n) => {
+          const d = new Date();
+          d.setDate(d.getDate() + n);
+          return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        };
+        localStorage.setItem('tugasku:tugas:v1', JSON.stringify([
+          { id: 1, nama: 'Laporan Praktikum 5', mk: 'PRAKTIKUM PEMROGRAMAN VISUAL', deadline: tanggal(1), prio: 'Tinggi', done: false },
+          { id: 2, nama: 'Revisi Storyboard Iklan', mk: 'PRODUKSI KONTEN DIGITAL', deadline: tanggal(2), prio: 'Tinggi', done: false },
+          { id: 3, nama: 'Kuis Jaringan Komputer', mk: 'JARINGAN KOMPUTER', deadline: tanggal(3), prio: 'Sedang', done: false },
+          { id: 4, nama: 'Naskah Berita Siaran', mk: 'TEKNIK PENYIARAN', deadline: tanggal(5), prio: 'Sedang', done: true },
+          { id: 5, nama: 'Review Modul 4', mk: 'PRAKTIKUM PEMROGRAMAN VISUAL', deadline: tanggal(7), prio: 'Rendah', done: true },
+          { id: 6, nama: 'Latihan Editing Audio', mk: 'PRODUKSI KONTEN DIGITAL', deadline: tanggal(10), prio: 'Rendah', done: false },
+        ]));
+        localStorage.setItem('tugasku:matkul:v1', JSON.stringify([
+          'PRAKTIKUM PEMROGRAMAN VISUAL', 'PRODUKSI KONTEN DIGITAL', 'JARINGAN KOMPUTER',
+          'TEKNIK PENYIARAN', 'ANIMASI 2D', 'JURNALISTIK',
+        ]));
+      },
+    };
+  </script>
+  <script src="demo-kit.js"></script>
   <script type="module" src="src/js/main.js"></script>
 </body>
 </html>
