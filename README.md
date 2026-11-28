@@ -132,6 +132,8 @@ BarisTugas(tugas, { onSelesai, onHapus, onFokus, animasi }) -> HTMLElement
 
 ## Kredit aset dan pustaka
 
+- `demo-kit.js` disalin dari LAMPIRAN lembar tugas Demo Akhir P14 (TB033109)
+  tanpa perubahan.
 - Bootstrap 5.3.3 dari CDN jsDelivr (MIT), alasan pemakaian dan cara menaikkan
   versi ada di `DEPENDENCIES.md`.
 - Font Inter (SIL Open Font License 1.1) di `assets/fonts/`.
