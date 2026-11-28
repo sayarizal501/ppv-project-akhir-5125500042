@@ -134,7 +134,7 @@ ambang 300 dan 420 detik di kit.
 | 00:30-02:30 | Alur utama: buka `?demo=1`, Isi contoh, tunjukkan 6 tugas dan statistik 33%, tambah satu tugas, tandai selesai, buka Statistik. | Aplikasi |
 | 02:30-03:30 | Cari dan saring: cari "jaringan", saring "Belum selesai" dan "Prioritas Tinggi". | Aplikasi |
 | 03:30-04:30 | Keadaan tidak ideal: kosongkan nama lalu Simpan (pesan validasi), isi deadline lampau, hapus satu tugas lewat modal konfirmasi. | Aplikasi |
-| 04:30-05:30 | Hasil uji usability dan perbaikannya, lalu sejarah sprint dari repositori. | Slide + GitHub |
+| 04:30-05:30 | Hasil uji usability dan perbaikannya; buka `docs/konsep/` (Tugas 7/P13) sebentar; lalu sejarah sprint dari repositori. Sebutkan perbandingan charter: Console bersih terbukti; ≤30 detik/≤6 interaksi, 10 tugas setelah reload, statistik 3 contoh, dan lebar 400 px masih target/belum tercatat; 2 dari 3 pengguna belum diuji. | Slide + GitHub + docs/konsep/ |
 | 05:30-06:30 | Satu potongan kode andalan dan jawaban "seribu pengguna". | Editor + slide |
 | 06:30-07:00 | Penutup, tautan repositori dan tag `v1.0.0`, sebutkan rekaman cadangan 60 detik. | Slide 1 |
 
