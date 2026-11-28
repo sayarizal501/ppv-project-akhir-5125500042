@@ -10,20 +10,25 @@ export function BarisTugas(tugas, { onSelesai, onHapus, onFokus, animasi = false
   const kiri = document.createElement('div');
   const judul = document.createElement('strong');
   judul.textContent = tugas.nama;
+  const prio = PRIO.includes(tugas.prio) ? tugas.prio : 'Sedang';
+  const tag = document.createElement('span');
+  tag.className = `badge tag ${prio}`;
+  tag.textContent = prio;
+  const judulBaris = document.createElement('div');
+  judulBaris.className = 'judul-baris';
+  judulBaris.append(judul, tag);
   const meta = document.createElement('div');
   meta.className = 'meta';
-  meta.textContent = `${tugas.mk} · ${tugas.deadline}`;
-  kiri.append(judul, meta);
+  const tgl = document.createElement('span');
+  tgl.className = 'tgl';
+  tgl.textContent = tugas.deadline;
+  meta.append(`${tugas.mk} · `, tgl);
+  kiri.append(judulBaris, meta);
 
   const kanan = document.createElement('div');
   kanan.style.display = 'flex';
   kanan.style.gap = '6px';
   kanan.style.alignItems = 'center';
-
-  const prio = PRIO.includes(tugas.prio) ? tugas.prio : 'Sedang';
-  const tag = document.createElement('span');
-  tag.className = `badge tag ${prio}`;
-  tag.textContent = prio;
 
   const tombolSelesai = document.createElement('button');
   tombolSelesai.type = 'button';
@@ -37,7 +42,7 @@ export function BarisTugas(tugas, { onSelesai, onHapus, onFokus, animasi = false
   tombolHapus.textContent = 'Hapus';
   tombolHapus.addEventListener('click', () => onHapus?.(tugas, li));
 
-  kanan.append(tag, tombolSelesai, tombolHapus);
+  kanan.append(tombolSelesai, tombolHapus);
   li.append(kiri, kanan);
 
   if (onFokus) {

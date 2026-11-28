@@ -92,6 +92,7 @@ export function perbaruiStatistik() {
   const p = persenSelesai();
   $('pct').textContent = p;
   $('doneCount').textContent = jumlahSelesai();
+  $('belumCount').textContent = semuaTugas().length - jumlahSelesai();
   $('totalCount').textContent = semuaTugas().length;
   $('bar').style.transform = `scaleX(${p / 100})`;
   document.querySelector('.progres').setAttribute('aria-valuenow', String(p));
@@ -103,6 +104,7 @@ export function animasikanStatistik() {
   const bar = $('bar'), angka = $('pct');
   document.querySelector('.progres').setAttribute('aria-valuenow', String(target));
   $('doneCount').textContent = jumlahSelesai();
+  $('belumCount').textContent = semuaTugas().length - jumlahSelesai();
   $('totalCount').textContent = semuaTugas().length;
   if (kurangiGerak()) {
     angka.textContent = target;
